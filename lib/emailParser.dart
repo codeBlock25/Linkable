@@ -1,6 +1,4 @@
-import 'package:linkable/constants.dart';
-import 'package:linkable/link.dart';
-import 'package:linkable/parser.dart';
+part of linksco;
 
 class EmailParser implements Parser {
   String text;

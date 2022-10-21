@@ -1,4 +1,4 @@
-name: linkable_example
+name: linksco_example
 description: linkable example
 
 version: 1.0.0
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   url_launcher: ^6.0.9
-  linkable:
+  linksco:
     path: ..
 
 flutter:

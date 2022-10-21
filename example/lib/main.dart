@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:linkable/linkable.dart';
+import 'package:linksco/linksco.dart';
 
 void main() => runApp(new LinkableExample());
 
@@ -14,7 +14,7 @@ class LinkableExample extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Center(
-              child: Linkable(
+              child: Linksco(
                 text:
                     "Hi!\nI'm Anup.\n\nYou can email me at 1anuppanwar@gmail.com.\nOr just whatsapp me @ +91-8968894728.\n\nFor more info visit: \ngithub.com/anupkumarpanwar \nor\nhttps://www.linkedin.com/in/anupkumarpanwar/",
               ),

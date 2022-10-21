@@ -1,3 +1,5 @@
+part of linksco;
+
 class Link {
   RegExpMatch regExpMatch;
   String type;

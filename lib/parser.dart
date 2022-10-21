@@ -1,4 +1,4 @@
-import 'package:linkable/link.dart';
+part of linksco;
 
 class Parser {
   List<Link> parse() {

@@ -1,6 +1,4 @@
-import 'package:linkable/constants.dart';
-import 'package:linkable/link.dart';
-import 'package:linkable/parser.dart';
+part of linksco;
 
 class HttpParser implements Parser {
   String text;
@@ -9,7 +7,9 @@ class HttpParser implements Parser {
 
   parse() {
     String pattern =
-        r"(http(s)?:\/\/)?(www.)?[a-zA-Z0-9]{2,256}\.[a-zA-Z0-9]{2,256}(\.[a-zA-Z0-9]{2,256})?([-a-zA-Z0-9@:%_\+~#?&//=.]*)([-a-zA-Z0-9@:%_\+~#?&//=]+)";
+        r"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$";
+    // String pattern =
+    //     r"(http(s)?:\/\/)?(www.)?[a-zA-Z0-9]{2,256}\.[a-zA-Z0-9]{2,256}(\.[a-zA-Z0-9]{2,256})?([-a-zA-Z0-9@:%_\+~#?&//=.]*)([-a-zA-Z0-9@:%_\+~#?&//=]+)";
 
     RegExp regExp = RegExp(pattern, caseSensitive: false);
 
