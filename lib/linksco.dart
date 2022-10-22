@@ -14,25 +14,25 @@ part 'telParser.dart';
 class Linksco extends StatefulWidget {
   final String text;
 
-  final textColor;
+  final Color? textColor;
 
-  final linkColor;
+  final Color? linkColor;
 
-  final style;
+  final TextStyle? style;
 
-  final textAlign;
+  final TextAlign? textAlign;
 
-  final textDirection;
+  final TextDirection? textDirection;
 
-  final maxLines;
+  final int? maxLines;
 
-  final textScaleFactor;
+  final double? textScaleFactor;
 
-  final strutStyle;
+  final StrutStyle? strutStyle;
 
-  final textWidthBasis;
+  final TextWidthBasis? textWidthBasis;
 
-  final textHeightBehavior;
+  final TextHeightBehavior? textHeightBehavior;
 
   Linksco({
     Key? key,
@@ -55,14 +55,10 @@ class Linksco extends StatefulWidget {
 class _LinkscoState extends State<Linksco> {
   List<Parser> _parsers = <Parser>[];
   List<Link> _links = <Link>[];
-  @override
-  void initState() {
-    init();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
+    init();
     return SelectableText.rich(
       TextSpan(
         text: '',
@@ -138,20 +134,25 @@ class _LinkscoState extends State<Linksco> {
     }
   }
 
-  init() {
-    _addParsers();
-    _parseLinks();
-    _filterLinks();
+  void init() {
+    setState(() {
+      _addParsers();
+      _parseLinks();
+      _filterLinks();
+    });
   }
 
   _addParsers() {
-    _parsers.add(EmailParser(widget.text));
-    _parsers.add(HttpParser(widget.text));
-    _parsers.add(TelParser(widget.text));
+    final text = widget.text;
+    print(text);
+    _parsers.add(EmailParser(text));
+    _parsers.add(HttpParser(text));
+    _parsers.add(TelParser(text));
   }
 
   _parseLinks() {
     for (Parser parser in _parsers) {
+      print(parser.parse());
       _links.addAll(parser.parse().toList());
     }
   }

@@ -1,6 +1,8 @@
 name: linksco_example
 description: linkable example
 
+publish_to: none
+
 version: 1.0.0
 
 environment:
@@ -11,7 +13,7 @@ dependencies:
     sdk: flutter
   url_launcher: ^6.0.9
   linksco:
-    path: ..
+    path: ../
 
 flutter:
   uses-material-design: true

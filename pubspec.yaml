@@ -1,7 +1,7 @@
 name: linksco
 description: A Flutter widget to add links to your text. Linkable widget is a wrapper over RichText which allows you to render links that can be clicked to redirect to the URL.
 version: 3.0.1
-homepage: https://github.com/AnupKumarPanwar/Linkable
+homepage: https://github.com/codeBlock25/Linksco
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
