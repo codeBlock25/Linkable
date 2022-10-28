@@ -144,7 +144,6 @@ class _LinkscoState extends State<Linksco> {
 
   _addParsers() {
     final text = widget.text;
-    print(text);
     _parsers.add(EmailParser(text));
     _parsers.add(HttpParser(text));
     _parsers.add(TelParser(text));
@@ -152,7 +151,6 @@ class _LinkscoState extends State<Linksco> {
 
   _parseLinks() {
     for (Parser parser in _parsers) {
-      print(parser.parse());
       _links.addAll(parser.parse().toList());
     }
   }
